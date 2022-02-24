@@ -21,7 +21,7 @@ public class MyHelloWorld {
     @Traced
     @Timed
     public String getHelloWorldJSON() {
-        return "{\"result\":\"" + myHelloService.createHelloMessage("JBoss EAP 7.3 with MicroProfile") + "\"}";
+        return "{\"result\":\"" + myHelloService.createHelloMessage("JBoss EAP 7.4 with MicroProfile") + "\"}";
     }
 
     @GET
@@ -30,7 +30,7 @@ public class MyHelloWorld {
     @Traced(false)
     @Counted
     public String getHelloWorldXML() {
-        return "<xml><result>" + myHelloService.createHelloMessage("JBoss EAP 7.3 with MicroProfile") + "</result></xml>";
+        return "<xml><result>" + myHelloService.createHelloMessage("JBoss EAP 7.4 with MicroProfile") + "</result></xml>";
     }
 
 }
