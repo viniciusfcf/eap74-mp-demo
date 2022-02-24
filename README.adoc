@@ -2,11 +2,21 @@
 
 Demo de uma aplicação em Jboss EAP 7.4 com MicroProfile Tracing, Health-Check e Metrics.
 
-
 ## Ambiente Dev
-1. Eclipse IDE for Enterprise Java and Web Developers
-1. [JBoss EAP 7.4](https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=99481&product=appplatform&version=7.4&downloadType=distributions)
+1. Utilizando Eclipse IDE for Enterprise Java and Web Developers
+1. Baixar JBoss EAP 7.4 https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=99481&product=appplatform&version=7.4&downloadType=distributions
+1. Instalar Patch: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&downloadType=patches&version=7.4
+1. Exemplo de comando de instalação: java -jar ~/Downloads/jboss-eap-xp-3.0.0-7.4.3-manager.jar patch-apply --jboss-home=/.../jboss-eap-7.4 --patch=/.../Downloads/jboss-eap-7.4.2-patch.zip
 1. JBoss EAP XP https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=104150&product=appplatform.xp&version=3.0.0&downloadType=patches
-1. Iniciar o JBoss no eclipse
-1. Adicionar projeto ao JBoss
+1. java -jar ~/Downloads/jboss-eap-xp-3.0.0-7.4.3-manager.jar patch-apply --jboss-home=/.../des/jboss-eap-7.4 --patch=/.../Downloads/jboss-eap-xp-3.0.0-patch.zip
+1 Exemplo de comando: java -jar ~/Downloads/jboss-eap-xp-3.0.0-7.4.3-manager.jar setup --jboss-home=/jboss-eap-7.4
+1. Iniciar o JBoss: ./standalone.sh -c standalone-microprofile.xml
+1. Iniciar Jaeger: docker run -d --name jaeger   -p 6831:6831/udp   -p 5778:5778   -p 14268:14268   -p 16686:16686   jaegertracing/all-in-one:1.16
+1. Fazer deploy do war no JBoss
 1. Acessar http://localhost:8080/eap74-microprofile-hello/
+
+
+## Fontes
+
+1. https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html-single/using_jboss_eap_xp_3.0.0/index#installing-jboss-eap-xp-on-eap_default
+1. https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/using_jboss_eap_xp_3.0.0/administer_microprofile_in_jboss_eap#installing-jaeger_default
