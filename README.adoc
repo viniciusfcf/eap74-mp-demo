@@ -6,6 +6,7 @@ Demo de uma aplicação em Jboss EAP 7.4 com MicroProfile Tracing, Health-Check 
 ## Ambiente Dev
 1. Eclipse IDE for Enterprise Java and Web Developers
 1. [JBoss EAP 7.4](https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=99481&product=appplatform&version=7.4&downloadType=distributions)
+1. JBoss EAP XP https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=104150&product=appplatform.xp&version=3.0.0&downloadType=patches
 1. Iniciar o JBoss no eclipse
 1. Adicionar projeto ao JBoss
 1. Acessar http://localhost:8080/eap74-microprofile-hello/
