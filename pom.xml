@@ -105,19 +105,34 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- Import the JAX-RS API, we use provided scope as the API is included in JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.ws.rs</groupId>
             <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
             <scope>provided</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-microprofile-opentracing-smallrye</artifactId>
+            <version>26.0.1.Final</version>
+            <scope>provided</scope>
+        </dependency>
 
-        <!-- microprofile-opentracing-api -->
+        <!-- Com dependencia acima, nao precisa dessa abaixo. Esta não tem Tracer
         <dependency>
             <groupId>org.eclipse.microprofile.opentracing</groupId>
             <artifactId>microprofile-opentracing-api</artifactId>
             <version>1.3.2</version>
         </dependency>
+        
+        -->
 
         <!-- microprofile-metrics-api -->
         <dependency>

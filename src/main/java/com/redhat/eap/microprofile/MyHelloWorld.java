@@ -10,7 +10,7 @@ import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.opentracing.Traced;
 
 @Path("/")
-public class MyHelloWorldJAXRS {
+public class MyHelloWorld {
 
     @Inject
     MyHelloService myHelloService;
