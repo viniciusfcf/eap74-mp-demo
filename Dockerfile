@@ -23,6 +23,11 @@ RUN unzip /opt/redhat/jboss-eap-7.4.3-mp.zip
 #add admin admin
 COPY mgmt-users.properties /opt/redhat/jboss-eap-7.4/standalone/configuration
 COPY target/eap74-microprofile-hello.war /opt/redhat/jboss-eap-7.4/standalone/deployment
+
+RUN chown -R 1001:0 /opt/redhat
+
+USER 1001
+
 EXPOSE 8080
 EXPOSE 9990
 
