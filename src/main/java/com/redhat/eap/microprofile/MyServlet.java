@@ -21,6 +21,8 @@ import io.opentracing.Tracer.SpanBuilder;
 @WebServlet(name = "my-servlet", urlPatterns = { "/my-servlet" })
 public class MyServlet extends HttpServlet {
 
+    private static final long serialVersionUID = 1L;
+
     @Inject
     @Metric(name = "servlet-counter")
     Counter counter;
