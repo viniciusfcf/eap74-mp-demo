@@ -6,7 +6,7 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 
 USER 0
 RUN mkdir -p /opt/redhat/
-COPY files/jboss-eap-7.4.3-mp.zip /opt/redhat
+COPY files/jboss-eap-7.4.2-mp.zip /opt/redhat
 
 RUN chown -R 1001:0 /opt/redhat
 
@@ -18,7 +18,7 @@ RUN microdnf install gzip ${JAVA_PACKAGE} \
 
 WORKDIR /opt/redhat/
 
-RUN unzip /opt/redhat/jboss-eap-7.4.3-mp.zip
+RUN unzip /opt/redhat/jboss-eap-7.4.2-mp.zip
 
 #add admin admin
 COPY mgmt-users.properties /opt/redhat/jboss-eap-7.4/standalone/configuration
