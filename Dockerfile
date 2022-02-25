@@ -26,7 +26,13 @@ COPY target/eap74-microprofile-hello.war /opt/redhat/jboss-eap-7.4/standalone/de
 
 RUN chown -R 1001:0 /opt/redhat
 
-USER 1001
+RUN chown -R jboss:jboss /opt/redhat/jboss-eap-7.4
+
+RUN chmod -R 777 /opt/redhat/jboss-eap-7.4
+
+#RUN groupadd -r jboss -g 1000 && useradd -u 1000 -u 1001 -r -g jboss -m -d /opt/redhat/jboss-eap-7.4/ -s /sbin/nologin -c "JBoss user" jboss && chmod 755 /opt/redhat/jboss-eap-7.4/
+
+USER jboss
 
 EXPOSE 8080
 EXPOSE 9990
@@ -34,5 +40,5 @@ EXPOSE 9990
 WORKDIR /opt/redhat/jboss-eap-7.4/bin
 
 ENTRYPOINT ["./standalone.sh" ]
-CMD ["-c", "standalone-microprofile.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+CMD ["-c", "standalone-microprofile.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0", "-Djboss.server.log.dir=/opt/redhat/jboss-eap-7.4/standalone/log/"]
 # CMD ["sh", "-c", "tail -f /dev/null"]
