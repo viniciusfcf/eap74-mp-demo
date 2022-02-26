@@ -39,6 +39,12 @@ EXPOSE 9990
 
 WORKDIR /opt/redhat/jboss-eap-7.4/bin
 
+# -e JAEGER_SERVICE_NAME=eap74-mp-demo -e JAEGER_ENDPOINT=http://host.docker.internal:14268/api/traces -e JAEGER_SAMPLER_TYPE=const -e JAEGER_SAMPLER_PARAM=1
+ENV JAEGER_SERVICE_NAME eap74-mp-demo
+ENV JAEGER_ENDPOINT http://my-jaeger-collector:14268/api/traces
+ENV JAEGER_SAMPLER_TYPE const
+ENV JAEGER_SAMPLER_PARAM 1
+
 ENTRYPOINT ["./standalone.sh" ]
-CMD ["-c", "standalone-microprofile.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0", "-Djboss.server.log.dir=/opt/redhat/jboss-eap-7.4/standalone/log/"]
+CMD ["-c", "standalone-microprofile.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
 # CMD ["sh", "-c", "tail -f /dev/null"]
